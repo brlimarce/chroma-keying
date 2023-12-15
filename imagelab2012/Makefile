@@ -15,7 +15,7 @@
 CC = g++
 
 # the object files
-OBJS = binary.o color.o filter.o tools.o jpegio.o
+OBJS = binary.o color.o filter.o tools.o jpegio.o -lpng
 
 .SUFFIXES : .c .cpp .o .out
 

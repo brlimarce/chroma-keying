@@ -3,9 +3,6 @@
  * A revision of the sample program provided by
  * Sir Val for his choir singing video with the
  * hue erasing code, hue_erase.cpp, incorporated.
- * 
- * * Disclaimer: Transfer this program file
- * * into Image Lab's folder.
  **********************************************
 */
 #define IMAGE_RANGE_CHECK
