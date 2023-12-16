@@ -1,5 +1,6 @@
 /**********************************************
  * * Chroma Keying
+ * 
  * A revision of the sample program provided by
  * Sir Val for his choir singing video with the
  * hue erasing code, hue_erase.cpp, incorporated.
@@ -86,7 +87,7 @@ void write_png(const char *filename, int width, int height, png_bytep *rowptr) {
 int main(int argc, char *argv[]) {
   int x, y, height, width, pixColor, max_green, min_green, num_frames;
   double red, green, blue;
-  double hue, saturation, intensity, min_intensity;
+  double hue, saturation, intensity, min_saturation, max_saturation, min_intensity, max_intensity;
   RGBImage inputImage;
 
   char image_seq[150], outputFileFormat[100];
@@ -120,8 +121,16 @@ int main(int argc, char *argv[]) {
   scanf("%i", &min_green);
   printf("Enter max of green hue to filter: ");
   scanf("%i", &max_green);
+
+  printf("Enter min saturation of green hue to filter: ");
+  scanf("%lf", &min_saturation);
+  printf("Enter max saturation of green hue to filter: ");
+  scanf("%lf", &max_saturation);
+
   printf("Enter min intensity of green hue to filter: ");
   scanf("%lf", &min_intensity);
+  printf("Enter max intensity of green hue to filter: ");
+  scanf("%lf", &max_intensity);
 
   for (int frame = 0 ; frame < num_frames; frame++) {
     sprintf(inputImageFile, image_seq, frame);
@@ -164,7 +173,9 @@ int main(int argc, char *argv[]) {
         hue_index = (int)hue * 180 / 3.14159;
 
         // Hue that we want to erase
-        if (hue_index >= min_green && hue_index <= max_green && intensity > min_intensity)  {
+        if (hue_index >= min_green && hue_index <= max_green &&
+            saturation >= min_saturation && saturation <= max_saturation &&
+            intensity >= min_intensity && intensity <= max_intensity)  {
           rows[x][4 * y + 3] = 0;
         } else {
           rows[x][4 * y + 3] = 255;

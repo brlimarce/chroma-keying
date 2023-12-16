@@ -1,6 +1,5 @@
 /**********************************************
  * * Hue Eraser
- * Created by CJ Fabregas, revised by RL Domingo.
  * 
  * This program takes in a JPG/JPEG image as
  * input and outputs a PNG image with the specified
