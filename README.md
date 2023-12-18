@@ -14,12 +14,14 @@
 <!-- File Structure -->
 ## 📁 Directory
     .
-    ├── assets                  # For GitHub use
-    ├── imagelab2012            # Image Lab
-    ├── project                 # For Lab Project
-    │   ├── images              # Folders for image sequences
-    │   ├── raw                 # Raw files
-    │   └── chroma_key.cpp      # Sample code for chroma keying
+    ├── assets                     # For GitHub use
+    ├── imagelab2012               # Image Lab
+    ├── project                    # For Lab Project
+    │   ├── seq                    # Folders for image sequences
+    │   ├── raw                    # Raw files
+    │   ├── chroma_key.cpp         # Revised program
+    │   ├── chroma_key_sample.cpp  # Sample code for chroma keying
+    │   └── hue_erase.cpp          # Sample code for erasing the green pixels
     └── README.md
 
 - Upload your **image sequence** in the `project/images` folder. The folder name format is **\<timestamp>_\<name>.\<ext>**. *Example: 001-002_bia.jpg*
